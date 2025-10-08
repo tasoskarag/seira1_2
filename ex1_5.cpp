@@ -4,9 +4,9 @@ void hello () {
     WRITELN("hello world"); 
 } 
 
-PROGRAM {   
-    WRITE("Give number of greetings",         "then press <enter>: ");   
+PROGRAM {     
     int n = READ_INT();   
-    for (int i = 0; i < n ; i++) 
+    if (n < 0) WRITELN("nothing today");
+    else for (int i = 0; i < n ; i++) 
         hello(); 
     } 

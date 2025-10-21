@@ -71,13 +71,24 @@ PROGRAM {
             continue;
         }
 
-        if (m==0) 
-            WRITELN(0,1); 
-        else {
-            int mcdint = mcd(abs(m),abs(n));
-            WRITELN(prod*abs(m)/mcdint, abs(n)/mcdint);
-        }
+        if (m==0) { 
+            WRITELN(0,0,1);
+        } else {
         
+            int mcdint = mcd(abs(m),abs(n));
+
+            int posnum = abs(m)/mcdint;
+            int posden = abs(n)/mcdint;
+
+            if (prod==1) { 
+                WRITELN(posnum/posden, posnum%posden, posden);
+            }
+            else if (prod==-1 && posnum/posden==0) {
+                WRITELN("-0", posnum%posden, posden);
+            } else if (prod == -1) {
+                WRITELN("-", posnum/posden, posnum%posden, posden);
+            }
+        }
 
     }
 

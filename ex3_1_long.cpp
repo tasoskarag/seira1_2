@@ -1,25 +1,24 @@
 #include "pzhelp"
 
-int min_int(int a, int b) {
-    int minint = a;
+long long min_int(long long a, long long b) {
+    long minint = a;
     if (b<a)
         minint = b; 
     return minint; 
 }
 
-int max_int(int a, int b) {
-    int maxint = a;
+long long max_int(long long a, long long b) {
+    long maxint = a;
     if (b>a)
         maxint = b; 
     return maxint; 
 }
-
-int mcd(int x, int y) {
-    int minint = min_int(x,y);
-    int maxint = max_int(x,y);
+long long mcd(long long x, long long y) {
+    long long minint = min_int(x,y);
+    long long maxint = max_int(x,y);
     if (minint == maxint)
         return minint;
-        else
+    else
         return mcd(maxint-minint, minint);
 
 }
@@ -32,14 +31,14 @@ PROGRAM {
     for (int i=1; i <= k; i++) {
         char symbol = getchar();
 
-        int a = READ_INT(); 
-        int b = READ_INT(); 
-        int c = READ_INT(); 
-        int d = READ_INT();
+        long long a = READ_INT(); 
+        long long b = READ_INT(); 
+        long long c = READ_INT(); 
+        long long d = READ_INT();
         SKIP_LINE();
 
-        int m;
-        int n;
+        long long m;
+        long long n;
         if (symbol == '+') {
             m = a*d + b*c; 
             n = b*d;
@@ -53,15 +52,6 @@ PROGRAM {
             m = a*d;
             n = b*c;
         }
-            
-        int prod;
-
-        int mn = m*n;
-
-        if ( mn >= 0)
-            prod = 1;
-        else 
-            prod = -1;
 
 
         if ((b==0) || (d==0)) { 
@@ -77,13 +67,14 @@ PROGRAM {
         if (m==0) 
             WRITELN(0,1); 
         else {
-            int mcdint = mcd(abs(m),abs(n));
-            WRITELN(prod*abs(m)/mcdint, abs(n)/mcdint);
+            long long mcdint = mcd(m,n);
+            WRITELN(m/mcdint, n/mcdint);
         }
         
 
     }
 
 }
+
 
 

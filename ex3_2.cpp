@@ -86,7 +86,8 @@ PROGRAM {
             else if (prod==-1 && posnum/posden==0) {
                 WRITELN("-0", posnum%posden, posden);
             } else if (prod == -1) {
-                WRITELN("-", posnum/posden, posnum%posden, posden);
+                WRITE("-");
+                WRITELN(posnum/posden, posnum%posden, posden);
             }
         }
 

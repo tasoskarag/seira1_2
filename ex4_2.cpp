@@ -5,20 +5,20 @@ PROGRAM {
 int l = READ_INT();
 SKIP_LINE();
 
-char a[100][22];
+char a[100][23];
 int h[100];
 int sum = 0;
     
     for (int i=0; i<l; i++) { 
         // scanf("%21s", a[i]); 
-        fgets(a[i], 22, stdin);
+        fgets(a[i], 23, stdin);
         // SKIP_LINE();
         
         int len = strlen(a[i]);
 
-        if(len>20) {
+        if(len>21) {
             h[i]=-1;
-            a[i][20]='\0';
+            a[i][21]='\0';
             fseek(stdin,0,SEEK_END);
         }  
         else 

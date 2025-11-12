@@ -46,6 +46,6 @@ PROGRAM {
             rowMinMax = rowMin;
     }
 
-    WRITE(rowMinMax);
+    WRITELN(rowMinMax);
 
 }
